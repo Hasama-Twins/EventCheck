@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import AlamoFireImage
+import AlamofireImage
+import Parse
 
 class PostEventViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -20,14 +21,34 @@ class PostEventViewController: UIViewController, UIImagePickerControllerDelegate
     
     @IBOutlet weak var eventLocation: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
     @IBAction func onPostButton(_ sender: Any) {
+        let post = PFObject(className: "Event")
         
+        post["name"] = eventName.text!
+        post["description"] = eventDescription.text!
+        post["datetime"] = eventDateTime.date
+        post["location"] = eventLocation.text!
+        
+        let imageData = eventImage.image!.pngData()
+        let file = PFFileObject(data: imageData!)
+        
+        post["image"] = file
+        
+        
+        post.saveInBackground { (success, error) in
+            if success {
+                print("saved")
+            } else {
+                print("error")
+            }
+        }
         
     }
     
@@ -45,11 +66,10 @@ class PostEventViewController: UIViewController, UIImagePickerControllerDelegate
         let size = CGSize(width: 300, height: 300)
         let scaledImage = image.af_imageAspectScaled(toFill: size)
         
-        imageView.image = scaledImage
+        eventImage.image = scaledImage
         
         dismiss(animated: true, completion: nil)
     }
-    
     
     /*
     // MARK: - Navigation
