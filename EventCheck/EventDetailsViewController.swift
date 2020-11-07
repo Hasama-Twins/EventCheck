@@ -22,6 +22,7 @@ class EventDetailsViewController: UIViewController {
     var postEventDescription: String?
     var postEventDateTime: String?
     var postURL: URL?
+    var postEventLocation: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,14 +39,20 @@ class EventDetailsViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let checklistViewController = segue.destination as! ChecklistViewController
+        checklistViewController.postEventName = postEventName
+        checklistViewController.postEventDateTime = postEventDateTime
+        checklistViewController.postEventLocation = postEventLocation as! String
+        
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }

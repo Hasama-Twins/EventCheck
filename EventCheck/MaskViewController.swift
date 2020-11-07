@@ -10,7 +10,9 @@ import AlamofireImage
 import Firebase
 
 class MaskViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+    var postEventDateTime: String?
+    var postEventName: String?
+    var postEventLocation: String?
     var count: Int = 0
     @IBOutlet weak var imageView: UIImageView!
     
@@ -84,15 +86,19 @@ class MaskViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let locationRevealViewController = segue.destination as! LocationRevealViewController
+        locationRevealViewController.postEventName = postEventName
+        locationRevealViewController.postEventDateTime = postEventDateTime
+        locationRevealViewController.postEventLocation = postEventLocation as! String
     }
-    */
+    
 
 }
 

@@ -130,15 +130,16 @@ class AllEventsTableViewController: UITableViewController {
         let urlString = imageFile.url!
         let postURL = URL(string: urlString)!
         
-        
+        let postEventLocation = posts[indexPath!.row]["location"]
         
         let eventDetailsViewController = segue.destination as! EventDetailsViewController
         eventDetailsViewController.postEventDescription = postEventDescription
         eventDetailsViewController.postEventName = postEventName
         eventDetailsViewController.postEventDateTime = postEventDateTime
         eventDetailsViewController.postURL = postURL
+        eventDetailsViewController.postEventLocation = postEventLocation as! String
         
-        
+       
         
         
         tableView.deselectRow(at: indexPath!, animated: true)
