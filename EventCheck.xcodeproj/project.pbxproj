@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BDDC10D2556831900D4F9BA /* AllEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC10C2556831900D4F9BA /* AllEventsTableViewController.swift */; };
+		4BDDC1122556837300D4F9BA /* SavedEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC1112556837300D4F9BA /* SavedEventsTableViewController.swift */; };
+		4BDDC117255683A200D4F9BA /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC116255683A200D4F9BA /* EventDetailsViewController.swift */; };
+		4BDDC11C255683C900D4F9BA /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC11B255683C900D4F9BA /* ChecklistViewController.swift */; };
+		4BDDC1212556840800D4F9BA /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC1202556840800D4F9BA /* MaskViewController.swift */; };
+		4BDDC1262556842F00D4F9BA /* LocationRevealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC1252556842F00D4F9BA /* LocationRevealViewController.swift */; };
 		4BF71E4725567474000B8130 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF71E4625567474000B8130 /* AppDelegate.swift */; };
 		4BF71E4925567474000B8130 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF71E4825567474000B8130 /* SceneDelegate.swift */; };
 		4BF71E4B25567474000B8130 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF71E4A25567474000B8130 /* ViewController.swift */; };
@@ -36,6 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4BDDC10C2556831900D4F9BA /* AllEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsTableViewController.swift; sourceTree = "<group>"; };
+		4BDDC1112556837300D4F9BA /* SavedEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedEventsTableViewController.swift; sourceTree = "<group>"; };
+		4BDDC116255683A200D4F9BA /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		4BDDC11B255683C900D4F9BA /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
+		4BDDC1202556840800D4F9BA /* MaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
+		4BDDC1252556842F00D4F9BA /* LocationRevealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRevealViewController.swift; sourceTree = "<group>"; };
 		4BF71E4325567474000B8130 /* EventCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF71E4625567474000B8130 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BF71E4825567474000B8130 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +121,12 @@
 				4BF71E5125567477000B8130 /* LaunchScreen.storyboard */,
 				4BF71E5425567477000B8130 /* Info.plist */,
 				4BF71E8425567733000B8130 /* PostEventViewController.swift */,
+				4BDDC10C2556831900D4F9BA /* AllEventsTableViewController.swift */,
+				4BDDC1112556837300D4F9BA /* SavedEventsTableViewController.swift */,
+				4BDDC116255683A200D4F9BA /* EventDetailsViewController.swift */,
+				4BDDC11B255683C900D4F9BA /* ChecklistViewController.swift */,
+				4BDDC1202556840800D4F9BA /* MaskViewController.swift */,
+				4BDDC1252556842F00D4F9BA /* LocationRevealViewController.swift */,
 			);
 			path = EventCheck;
 			sourceTree = "<group>";
@@ -262,8 +280,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BF71E4B25567474000B8130 /* ViewController.swift in Sources */,
+				4BDDC11C255683C900D4F9BA /* ChecklistViewController.swift in Sources */,
+				4BDDC117255683A200D4F9BA /* EventDetailsViewController.swift in Sources */,
+				4BDDC10D2556831900D4F9BA /* AllEventsTableViewController.swift in Sources */,
+				4BDDC1262556842F00D4F9BA /* LocationRevealViewController.swift in Sources */,
 				4BF71E4725567474000B8130 /* AppDelegate.swift in Sources */,
 				4BF71E4925567474000B8130 /* SceneDelegate.swift in Sources */,
+				4BDDC1122556837300D4F9BA /* SavedEventsTableViewController.swift in Sources */,
+				4BDDC1212556840800D4F9BA /* MaskViewController.swift in Sources */,
 				4BF71E8525567733000B8130 /* PostEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
