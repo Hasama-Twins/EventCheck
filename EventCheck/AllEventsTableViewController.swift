@@ -120,11 +120,7 @@ class AllEventsTableViewController: UITableViewController {
         let postEventDescription = posts[indexPath!.row]["description"] as! String
         let postEventName = posts[indexPath!.row]["name"] as! String
         
-        let date = posts[indexPath!.row]["datetime"]
-        let formatter = DateFormatter()
-        formatter.timeZone = NSTimeZone(name: "PST") as TimeZone?
-        formatter.dateFormat = "MMM d y, h:mm a"
-        let postEventDateTime = formatter.string(from: date as! Date)
+        let postEventDateTime = posts[indexPath!.row]["datetime"] as! Date
         
         let imageFile = posts[indexPath!.row]["image"] as! PFFileObject
         let urlString = imageFile.url!

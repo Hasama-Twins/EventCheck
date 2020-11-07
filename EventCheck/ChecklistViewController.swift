@@ -21,7 +21,6 @@ class ChecklistViewController: UIViewController {
         
         self.continueButton.setTitleColor(.white, for: UIControl.State.normal)
         
-        self.backToHomeButton.setTitleColor(.white, for: UIControl.State.normal)
         // Do any additional setup after loading the view.
     }
     var count: Int=0
@@ -51,7 +50,6 @@ class ChecklistViewController: UIViewController {
     
     @IBOutlet weak var continueButton: UIButton!
     
-    @IBOutlet weak var backToHomeButton: UIButton!
     
     
     @IBAction func button1(_ sender: Any) {
@@ -122,7 +120,6 @@ class ChecklistViewController: UIViewController {
         }else{
             self.checkMarkStatusLabel.text = "If you are feeling ill, you may not attend this event. Please schedule a COVID-19 test."
             self.checkMarkStatusLabel.textColor = UIColor.black
-            self.backToHomeButton.setTitleColor(.systemBlue, for: UIControl.State.normal)
         }
     }
     
