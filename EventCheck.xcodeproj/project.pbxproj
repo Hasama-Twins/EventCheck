@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		4BDDC11C255683C900D4F9BA /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC11B255683C900D4F9BA /* ChecklistViewController.swift */; };
 		4BDDC1212556840800D4F9BA /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC1202556840800D4F9BA /* MaskViewController.swift */; };
 		4BDDC1262556842F00D4F9BA /* LocationRevealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC1252556842F00D4F9BA /* LocationRevealViewController.swift */; };
+		4BDDC18F25569D4D00D4F9BA /* AllEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC18E25569D4D00D4F9BA /* AllEventsTableViewCell.swift */; };
+		4BDDC19425569D6300D4F9BA /* SavedEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC19325569D6300D4F9BA /* SavedEventsTableViewCell.swift */; };
 		4BF71E4725567474000B8130 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF71E4625567474000B8130 /* AppDelegate.swift */; };
 		4BF71E4925567474000B8130 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF71E4825567474000B8130 /* SceneDelegate.swift */; };
 		4BF71E4B25567474000B8130 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF71E4A25567474000B8130 /* ViewController.swift */; };
@@ -54,6 +56,8 @@
 		4BDDC11B255683C900D4F9BA /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
 		4BDDC1202556840800D4F9BA /* MaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
 		4BDDC1252556842F00D4F9BA /* LocationRevealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRevealViewController.swift; sourceTree = "<group>"; };
+		4BDDC18E25569D4D00D4F9BA /* AllEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsTableViewCell.swift; sourceTree = "<group>"; };
+		4BDDC19325569D6300D4F9BA /* SavedEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedEventsTableViewCell.swift; sourceTree = "<group>"; };
 		4BF71E4325567474000B8130 /* EventCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF71E4625567474000B8130 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BF71E4825567474000B8130 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +119,6 @@
 				58699524E20B25A735456986 /* Pods-EventCheckTests.debug.xcconfig */,
 				C05589D5EEE2020723DBC8B5 /* Pods-EventCheckTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -158,6 +161,8 @@
 				4BDDC11B255683C900D4F9BA /* ChecklistViewController.swift */,
 				4BDDC1202556840800D4F9BA /* MaskViewController.swift */,
 				4BDDC1252556842F00D4F9BA /* LocationRevealViewController.swift */,
+				4BDDC18E25569D4D00D4F9BA /* AllEventsTableViewCell.swift */,
+				4BDDC19325569D6300D4F9BA /* SavedEventsTableViewCell.swift */,
 			);
 			path = EventCheck;
 			sourceTree = "<group>";
@@ -428,10 +433,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDDC19425569D6300D4F9BA /* SavedEventsTableViewCell.swift in Sources */,
 				4BF71E4B25567474000B8130 /* ViewController.swift in Sources */,
 				4BDDC11C255683C900D4F9BA /* ChecklistViewController.swift in Sources */,
 				4BDDC117255683A200D4F9BA /* EventDetailsViewController.swift in Sources */,
 				4BDDC10D2556831900D4F9BA /* AllEventsTableViewController.swift in Sources */,
+				4BDDC18F25569D4D00D4F9BA /* AllEventsTableViewCell.swift in Sources */,
 				4BDDC1262556842F00D4F9BA /* LocationRevealViewController.swift in Sources */,
 				4BF71E4725567474000B8130 /* AppDelegate.swift in Sources */,
 				4BF71E4925567474000B8130 /* SceneDelegate.swift in Sources */,

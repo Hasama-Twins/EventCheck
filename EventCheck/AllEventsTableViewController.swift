@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import Parse
+import AlamofireImage
 
 class AllEventsTableViewController: UITableViewController {
-
+    
+    var posts = [PFObject]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,28 +22,56 @@ class AllEventsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let query = PFQuery(className:"Event")
+        query.limit = 20
+        print("viewdid appear")
+        query.findObjectsInBackground { (posts, error) in
+            if posts != nil {
+                self.posts = posts!
+                self.tableView.reloadData()
+            }
+        }
+    }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        print(posts.count)
+        return posts.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AllEventsTableViewCell") as! AllEventsTableViewCell
 
         // Configure the cell...
-
+        let post = posts[indexPath.row]
+        
+        cell.eventName.text = post["name"] as! String
+        
+        let date = post["datetime"]
+        let formatter = DateFormatter()
+        formatter.timeZone = NSTimeZone(name: "PST") as TimeZone?
+        formatter.dateFormat = "MMM d y, h:mm a"
+        cell.eventDateTime.text = formatter.string(from: date as! Date)
+        
+        cell.eventDescription.text = post["description"] as! String
+        
+        let imageFile = post["image"] as! PFFileObject
+        let urlString = imageFile.url!
+        let url = URL(string: urlString)!
+        
+        cell.eventPhoto.af_setImage(withURL: url)
+        
         return cell
+
+
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -76,14 +108,22 @@ class AllEventsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)
+        let post = posts[indexPath!.row]
+        
+        let eventDetailsViewController = segue.destination as! EventDetailsViewController
+        eventDetailsViewController.post = post
+        
+        tableView.deselectRow(at: indexPath!, animated: true)
     }
-    */
+   
 
 }

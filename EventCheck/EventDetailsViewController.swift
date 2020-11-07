@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import Parse
+import AlamofireImage
 
 class EventDetailsViewController: UIViewController {
 
+    
+    var post = PFObject()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
