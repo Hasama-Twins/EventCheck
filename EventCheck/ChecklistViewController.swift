@@ -113,7 +113,7 @@ class ChecklistViewController: UIViewController {
     }
     
     @IBAction func nextButton(_ sender: Any) {
-        if count == 11 {
+        if count >= 11 {
             self.checkMarkStatusLabel.text = "Glad you do not have COVID-19 symptoms"
             self.checkMarkStatusLabel.textColor = UIColor.black
             self.continueButton.setTitleColor(.systemBlue, for: UIControl.State.normal)

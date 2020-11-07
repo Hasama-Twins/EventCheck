@@ -11,6 +11,7 @@ import Parse
 
 class PostEventViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    
     @IBOutlet weak var eventImage: UIImageView!
     
     @IBOutlet weak var eventName: UITextField!
@@ -21,10 +22,12 @@ class PostEventViewController: UIViewController, UIImagePickerControllerDelegate
     
     @IBOutlet weak var eventLocation: UITextField!
     
+    @IBAction func onExitKeyboard(_ sender: Any) {
+        self.view.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
     
@@ -45,6 +48,7 @@ class PostEventViewController: UIViewController, UIImagePickerControllerDelegate
         post.saveInBackground { (success, error) in
             if success {
                 print("saved")
+                self.navigationController?.popToRootViewController(animated: true)
             } else {
                 print("error")
             }

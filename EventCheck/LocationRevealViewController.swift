@@ -19,7 +19,11 @@ class LocationRevealViewController: UIViewController {
     var postEventDateTime: String?
     var postEventLocation: String?
     
+    @IBAction func onBackEvents(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
     override func viewDidLoad() {
+        self.tabBarController?.tabBar.isHidden = false
         super.viewDidLoad()
         
         self.eventName.text = postEventName

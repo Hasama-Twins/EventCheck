@@ -13,7 +13,7 @@ class MaskViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     var postEventDateTime: String?
     var postEventName: String?
     var postEventLocation: String?
-    var count: Int = 0
+
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var seeLocationButton: UIButton!
@@ -51,31 +51,38 @@ class MaskViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let scaledImage = image.af_imageAspectScaled(toFill: size)
         
         imageView.image = scaledImage
-        
+
         dismiss(animated: true, completion: nil)
     }
     
     
     @IBAction func onSeeLocationButton(_ sender: Any) {
         let image = VisionImage(image: imageView.image!)
+        print("image in vision")
         let options = VisionCloudImageLabelerOptions()
-        options.confidenceThreshold = 0.7
+        options.confidenceThreshold = 0.6
         let labeler = Vision.vision().cloudImageLabeler(options: options)
         labeler.process(image) { labels, error in
-            guard error == nil, let labels = labels else { return }
+            guard error == nil, let labels = labels else {
+                return }
+            var count = 0
+            var maskBool = false
 
             // Task succeeded.
             // ...
             
             for label in labels {
-                if (label.text == "Mask" || label.text == "Face Mask"){
-                    self.count += 1
+                print(label.text)
+                if ((label.text == "Mask" || label.text == "Face Mask" || label.text == "Medical equipment" || label.text == "Personal protective equipment") && maskBool == false){
+                    maskBool = true
+                    count += 1
                 }
                 if label.text == "Face"{
-                    self.count += 1
+                    count += 1
                 }
             }
-            if self.count == 2 {
+            print(count)
+            if count == 2 {
                 self.seeLocationButton.setTitleColor(.systemBlue, for: .normal)
                 self.maskStatusLabel.text = "Thanks for wearing your mask!"
             }
