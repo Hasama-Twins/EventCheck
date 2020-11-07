@@ -67,6 +67,14 @@ class AllEventsTableViewController: UITableViewController {
         
         cell.eventPhoto.af_setImage(withURL: url)
         
+        let numerator = post["registeredcount"] as! Int
+        let denominator = post["registeredcapacity"] as! Int
+        if numerator/denominator == 1{
+            cell.eventRegistered.text = "Event Full"
+        } else {
+            cell.eventRegistered.text = "\(numerator)/\(denominator) Registered"
+        }
+        
         return cell
 
 
@@ -128,12 +136,19 @@ class AllEventsTableViewController: UITableViewController {
         
         let postEventLocation = posts[indexPath!.row]["location"]
         
+        let numerator = posts[indexPath!.row]["registeredcount"] as! Int
+        let denominator = posts[indexPath!.row]["registeredcapacity"] as! Int
+        let isregistered = posts[indexPath!.row]["isregistered"] as! Bool
+        
         let eventDetailsViewController = segue.destination as! EventDetailsViewController
         eventDetailsViewController.postEventDescription = postEventDescription
         eventDetailsViewController.postEventName = postEventName
         eventDetailsViewController.postEventDateTime = postEventDateTime
         eventDetailsViewController.postURL = postURL
         eventDetailsViewController.postEventLocation = postEventLocation as! String
+        eventDetailsViewController.postEventNumerator = numerator as! Int
+        eventDetailsViewController.postEventDenominator = denominator as! Int
+        eventDetailsViewController.postEventRegistered = isregistered as! Bool
         
        
         

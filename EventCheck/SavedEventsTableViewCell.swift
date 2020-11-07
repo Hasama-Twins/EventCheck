@@ -17,6 +17,7 @@ class SavedEventsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var eventPhoto: UIImageView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

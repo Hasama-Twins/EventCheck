@@ -20,6 +20,8 @@ class PostEventViewController: UIViewController, UIImagePickerControllerDelegate
     
     @IBOutlet weak var eventDateTime: UIDatePicker!
     
+    @IBOutlet weak var eventCapacity: UITextField!
+    
     @IBOutlet weak var eventLocation: UITextField!
     
     @IBAction func onExitKeyboard(_ sender: Any) {
@@ -38,6 +40,9 @@ class PostEventViewController: UIViewController, UIImagePickerControllerDelegate
         post["description"] = eventDescription.text!
         post["datetime"] = eventDateTime.date
         post["location"] = eventLocation.text!
+        post["isregistered"] = false
+        post["registeredcapacity"] = Int(eventCapacity.text!)
+        post["registeredcount"] = 0
         
         let imageData = eventImage.image!.pngData()
         let file = PFFileObject(data: imageData!)

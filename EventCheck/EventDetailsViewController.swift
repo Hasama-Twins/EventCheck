@@ -23,6 +23,9 @@ class EventDetailsViewController: UIViewController {
     var postEventDateTime: Date?
     var postURL: URL?
     var postEventLocation: String?
+    var postEventNumerator: Int?
+    var postEventDenominator: Int?
+    var postEventRegistered: Bool?
     
     @IBOutlet weak var accessButton: UIButton!
     
