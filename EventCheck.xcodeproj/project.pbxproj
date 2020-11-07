@@ -15,6 +15,7 @@
 		4BF71E5325567477000B8130 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF71E5125567477000B8130 /* LaunchScreen.storyboard */; };
 		4BF71E5E25567477000B8130 /* EventCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF71E5D25567477000B8130 /* EventCheckTests.swift */; };
 		4BF71E6925567477000B8130 /* EventCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF71E6825567477000B8130 /* EventCheckUITests.swift */; };
+		4BF71E8525567733000B8130 /* PostEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF71E8425567733000B8130 /* PostEventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		4BF71E6425567477000B8130 /* EventCheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventCheckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF71E6825567477000B8130 /* EventCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCheckUITests.swift; sourceTree = "<group>"; };
 		4BF71E6A25567477000B8130 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BF71E8425567733000B8130 /* PostEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				4BF71E4F25567477000B8130 /* Assets.xcassets */,
 				4BF71E5125567477000B8130 /* LaunchScreen.storyboard */,
 				4BF71E5425567477000B8130 /* Info.plist */,
+				4BF71E8425567733000B8130 /* PostEventViewController.swift */,
 			);
 			path = EventCheck;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				4BF71E4B25567474000B8130 /* ViewController.swift in Sources */,
 				4BF71E4725567474000B8130 /* AppDelegate.swift in Sources */,
 				4BF71E4925567474000B8130 /* SceneDelegate.swift in Sources */,
+				4BF71E8525567733000B8130 /* PostEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +441,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H2MUY2UKU6;
 				INFOPLIST_FILE = EventCheck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,6 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H2MUY2UKU6;
 				INFOPLIST_FILE = EventCheck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
