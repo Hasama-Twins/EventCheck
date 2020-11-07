@@ -10,13 +10,30 @@ import Parse
 import AlamofireImage
 
 class EventDetailsViewController: UIViewController {
-
     
-    var post = PFObject()
+
+
+    @IBOutlet weak var eventName: UILabel!
+    @IBOutlet weak var eventPhoto: UIImageView!
+    @IBOutlet weak var eventDateTime: UILabel!
+    @IBOutlet weak var eventDescription: UILabel!
+    
+    var postEventName: String?
+    var postEventDescription: String?
+    var postEventDateTime: String?
+    var postURL: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.eventName.text = postEventName
+        
+        self.eventDateTime.text = postEventDateTime
+        
+        self.eventDescription.text = postEventDescription
+        
+        self.eventPhoto.af_setImage(withURL: postURL!)
+        
         // Do any additional setup after loading the view.
     }
     

@@ -117,10 +117,29 @@ class AllEventsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPath(for: cell)
-        let post = posts[indexPath!.row]
+        let postEventDescription = posts[indexPath!.row]["description"] as! String
+        let postEventName = posts[indexPath!.row]["name"] as! String
+        
+        let date = posts[indexPath!.row]["datetime"]
+        let formatter = DateFormatter()
+        formatter.timeZone = NSTimeZone(name: "PST") as TimeZone?
+        formatter.dateFormat = "MMM d y, h:mm a"
+        let postEventDateTime = formatter.string(from: date as! Date)
+        
+        let imageFile = posts[indexPath!.row]["image"] as! PFFileObject
+        let urlString = imageFile.url!
+        let postURL = URL(string: urlString)!
+        
+        
         
         let eventDetailsViewController = segue.destination as! EventDetailsViewController
-        eventDetailsViewController.post = post
+        eventDetailsViewController.postEventDescription = postEventDescription
+        eventDetailsViewController.postEventName = postEventName
+        eventDetailsViewController.postEventDateTime = postEventDateTime
+        eventDetailsViewController.postURL = postURL
+        
+        
+        
         
         tableView.deselectRow(at: indexPath!, animated: true)
     }
