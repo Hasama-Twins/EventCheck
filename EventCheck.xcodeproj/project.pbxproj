@@ -15,6 +15,9 @@
 		4BDDC1262556842F00D4F9BA /* LocationRevealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC1252556842F00D4F9BA /* LocationRevealViewController.swift */; };
 		4BDDC18F25569D4D00D4F9BA /* AllEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC18E25569D4D00D4F9BA /* AllEventsTableViewCell.swift */; };
 		4BDDC19425569D6300D4F9BA /* SavedEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC19325569D6300D4F9BA /* SavedEventsTableViewCell.swift */; };
+		4BDDC1992556B7D300D4F9BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDC1982556B7D300D4F9BA /* GoogleService-Info.plist */; };
+		4BDDC19A2556B7D300D4F9BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDC1982556B7D300D4F9BA /* GoogleService-Info.plist */; };
+		4BDDC19B2556B7D300D4F9BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDDC1982556B7D300D4F9BA /* GoogleService-Info.plist */; };
 		4BF71E4725567474000B8130 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF71E4625567474000B8130 /* AppDelegate.swift */; };
 		4BF71E4925567474000B8130 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF71E4825567474000B8130 /* SceneDelegate.swift */; };
 		4BF71E4B25567474000B8130 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF71E4A25567474000B8130 /* ViewController.swift */; };
@@ -58,6 +61,7 @@
 		4BDDC1252556842F00D4F9BA /* LocationRevealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRevealViewController.swift; sourceTree = "<group>"; };
 		4BDDC18E25569D4D00D4F9BA /* AllEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsTableViewCell.swift; sourceTree = "<group>"; };
 		4BDDC19325569D6300D4F9BA /* SavedEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedEventsTableViewCell.swift; sourceTree = "<group>"; };
+		4BDDC1982556B7D300D4F9BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4BF71E4325567474000B8130 /* EventCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF71E4625567474000B8130 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BF71E4825567474000B8130 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 		4BF71E4525567474000B8130 /* EventCheck */ = {
 			isa = PBXGroup;
 			children = (
+				4BDDC1982556B7D300D4F9BA /* GoogleService-Info.plist */,
 				4BF71E4625567474000B8130 /* AppDelegate.swift */,
 				4BF71E4825567474000B8130 /* SceneDelegate.swift */,
 				4BF71E4A25567474000B8130 /* ViewController.swift */,
@@ -304,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BF71E5325567477000B8130 /* LaunchScreen.storyboard in Resources */,
+				4BDDC1992556B7D300D4F9BA /* GoogleService-Info.plist in Resources */,
 				4BF71E5025567477000B8130 /* Assets.xcassets in Resources */,
 				4BF71E4E25567474000B8130 /* Main.storyboard in Resources */,
 			);
@@ -313,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDDC19A2556B7D300D4F9BA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDDC19B2556B7D300D4F9BA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
