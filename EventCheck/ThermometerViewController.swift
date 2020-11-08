@@ -1,15 +1,16 @@
 //
-//  MaskViewController.swift
+//  ThermometerViewController.swift
 //  EventCheck
 //
-//  Created by Evelyn Hasama on 11/6/20.
+//  Created by Evelyn Hasama on 11/7/20.
 //
 
 import UIKit
 import AlamofireImage
 import Firebase
+import MLKit
 
-class MaskViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ThermometerViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var postEventDateTime: String?
     var postEventName: String?
     var postEventLocation: String?
@@ -18,16 +19,16 @@ class MaskViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var seeLocationButton: UIButton!
     
+
+    @IBOutlet weak var tempStatusLabel: UILabel!
     
-    @IBOutlet weak var maskStatusLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.seeLocationButton.setTitleColor(.white, for: .normal)
-    }
         // Do any additional setup after loading the view.
-   
-        
+    }
+    
     @IBAction func onCameraButton(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -41,9 +42,6 @@ class MaskViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         present(picker, animated: true, completion: nil)
     }
     
-    
-    
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.editedImage] as! UIImage
         
@@ -55,43 +53,57 @@ class MaskViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         dismiss(animated: true, completion: nil)
     }
     
-    
-    @IBAction func onCheckButton(_ sender: Any) {
-        let image = VisionImage(image: imageView.image!)
+    @IBAction func onConfirmTempButton(_ sender: Any) {
+        let image = Firebase.VisionImage(image: imageView.image!)
         print("image in vision")
         let options = VisionCloudImageLabelerOptions()
-        options.confidenceThreshold = 0.6
+        options.confidenceThreshold = 0.5
         let labeler = Vision.vision().cloudImageLabeler(options: options)
         labeler.process(image) { labels, error in
             guard error == nil, let labels = labels else {
                 return }
             var count = 0
-            var maskBool = false
 
             // Task succeeded.
             // ...
             
             for label in labels {
                 print(label.text)
-                if ((label.text == "Mask" || label.text == "Face Mask" || label.text == "Medical equipment" || label.text == "Personal protective equipment") && maskBool == false){
-                    maskBool = true
-                    count += 1
-                }
-                if label.text == "Face"{
+                if (label.text == "Thermometer" || label.text == "Medical thermometer" || label.text == "Health care" ) {
                     count += 1
                 }
             }
             print(count)
-            if count == 2 {
-                self.seeLocationButton.setTitleColor(.systemBlue, for: .normal)
-                self.maskStatusLabel.text = "Thanks for wearing your mask!"
-            }
+            if count > 0 {
+                let image2 = MLKit.VisionImage(image: self.imageView.image!)
+                let textRecognizer = TextRecognizer.textRecognizer()
+                textRecognizer.process(image2) { result, error in
+                  guard error == nil, let result = result else {
+                    // Error handling
+                    return
+                  }
+                    for block in result.blocks {
+                        let blockText = block.text
+                        print(blockText)
+                        if (Float(blockText) ?? 101) <  100{
+                            self.seeLocationButton.setTitleColor(.systemBlue, for: .normal)
+                            self.tempStatusLabel.text = "Your tempurature looks good!"
+                            }
+                        }
+                    }
+                }
             else{
-                self.maskStatusLabel.text = "Try again. Please take a selfie with your mask on."
+                self.tempStatusLabel.text = "Try again. Please take a close up photo of your thermometer"
             }
         }
+        }
         
-    }
+    
+    
+    
+    
+    
+    
     
     
     // MARK: - Navigation
@@ -100,12 +112,13 @@ class MaskViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let ThermViewController = segue.destination as! ThermometerViewController
-        ThermViewController.postEventName = postEventName
-        ThermViewController.postEventDateTime = postEventDateTime
-        ThermViewController.postEventLocation = postEventLocation!
-    }
+        let Location = segue.destination as! LocationRevealViewController
+        Location.postEventName = postEventName
+        Location.postEventDateTime = postEventDateTime
+        Location.postEventLocation = postEventLocation!
     
+    }
 
 }
+
 

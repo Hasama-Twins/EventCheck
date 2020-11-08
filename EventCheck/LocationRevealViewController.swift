@@ -26,6 +26,7 @@ class LocationRevealViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
         super.viewDidLoad()
         
+        print(postEventName)
         self.eventName.text = postEventName
         
         self.eventDateTime.text = postEventDateTime

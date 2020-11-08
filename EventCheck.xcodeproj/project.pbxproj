@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B25E24F2557745C00D1D74E /* MyEventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25E24E2557745C00D1D74E /* MyEventDetailsViewController.swift */; };
+		4B25E2542557903800D1D74E /* ThermometerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25E2532557903800D1D74E /* ThermometerViewController.swift */; };
 		4BDDC10D2556831900D4F9BA /* AllEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC10C2556831900D4F9BA /* AllEventsTableViewController.swift */; };
 		4BDDC1122556837300D4F9BA /* SavedEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC1112556837300D4F9BA /* SavedEventsTableViewController.swift */; };
 		4BDDC117255683A200D4F9BA /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDDC116255683A200D4F9BA /* EventDetailsViewController.swift */; };
@@ -55,6 +56,7 @@
 		3AB657871DEB8A09D1BD7D3A /* Pods_EventCheckTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventCheckTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4297A1302874B468F9BC23C9 /* Pods_EventCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B25E24E2557745C00D1D74E /* MyEventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventDetailsViewController.swift; sourceTree = "<group>"; };
+		4B25E2532557903800D1D74E /* ThermometerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermometerViewController.swift; sourceTree = "<group>"; };
 		4BDDC10C2556831900D4F9BA /* AllEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsTableViewController.swift; sourceTree = "<group>"; };
 		4BDDC1112556837300D4F9BA /* SavedEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedEventsTableViewController.swift; sourceTree = "<group>"; };
 		4BDDC116255683A200D4F9BA /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				4BDDC18E25569D4D00D4F9BA /* AllEventsTableViewCell.swift */,
 				4BDDC19325569D6300D4F9BA /* SavedEventsTableViewCell.swift */,
 				4B25E24E2557745C00D1D74E /* MyEventDetailsViewController.swift */,
+				4B25E2532557903800D1D74E /* ThermometerViewController.swift */,
 			);
 			path = EventCheck;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				4BF71E4025567474000B8130 /* Frameworks */,
 				4BF71E4125567474000B8130 /* Resources */,
 				79BAEC20F70CE35B56C50176 /* [CP] Embed Pods Frameworks */,
+				FB949BB83810195251E8E9C9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +257,7 @@
 				4BF71E6125567477000B8130 /* Frameworks */,
 				4BF71E6225567477000B8130 /* Resources */,
 				0A852C849C8788CB7BB95D07 /* [CP] Embed Pods Frameworks */,
+				961000CD44D7922F3FA860FF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -437,6 +442,40 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EventCheck/Pods-EventCheck-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		961000CD44D7922F3FA860FF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EventCheck-EventCheckUITests/Pods-EventCheck-EventCheckUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EventCheck-EventCheckUITests/Pods-EventCheck-EventCheckUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EventCheck-EventCheckUITests/Pods-EventCheck-EventCheckUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB949BB83810195251E8E9C9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EventCheck/Pods-EventCheck-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EventCheck/Pods-EventCheck-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EventCheck/Pods-EventCheck-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -447,6 +486,7 @@
 				4BDDC19425569D6300D4F9BA /* SavedEventsTableViewCell.swift in Sources */,
 				4BF71E4B25567474000B8130 /* ViewController.swift in Sources */,
 				4BDDC11C255683C900D4F9BA /* ChecklistViewController.swift in Sources */,
+				4B25E2542557903800D1D74E /* ThermometerViewController.swift in Sources */,
 				4BDDC117255683A200D4F9BA /* EventDetailsViewController.swift in Sources */,
 				4BDDC10D2556831900D4F9BA /* AllEventsTableViewController.swift in Sources */,
 				4BDDC18F25569D4D00D4F9BA /* AllEventsTableViewCell.swift in Sources */,
