@@ -1,17 +1,15 @@
 //
-//  EventDetailsViewController.swift
+//  MyEventDetailsViewController.swift
 //  EventCheck
 //
-//  Created by Evelyn Hasama on 11/6/20.
+//  Created by Evelyn Hasama on 11/7/20.
 //
 
 import UIKit
 import Parse
 import AlamofireImage
 
-class EventDetailsViewController: UIViewController {
-    
-
+class MyEventDetailsViewController: UIViewController {
 
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var eventPhoto: UIImageView!
@@ -105,36 +103,6 @@ class EventDetailsViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-    }
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard let identifier = segue.identifier else {
-            return
-        }
-        if identifier == "AccessSegue" {
-            let checklistViewController = segue.destination as! ChecklistViewController
-            checklistViewController.postEventName = postEventName
-            checklistViewController.postEventLocation = postEventLocation as! String
-            
-            let date = postEventDateTime
-            let formatter = DateFormatter()
-            formatter.timeZone = NSTimeZone(name: "PST") as TimeZone?
-            formatter.dateFormat = "MMM d y, h:mm a"
-            checklistViewController.postEventDateTime = formatter.string(from: date as! Date)
-            
-        }
-        
-        
-        
-        
-        
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
 
 

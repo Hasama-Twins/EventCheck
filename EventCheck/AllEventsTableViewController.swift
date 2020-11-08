@@ -15,18 +15,13 @@ class AllEventsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let query = PFQuery(className:"Event")
         query.limit = 20
+        query.order(byDescending: "createdAt")
         print("viewdid appear")
         query.findObjectsInBackground { (posts, error) in
             if posts != nil {
@@ -40,8 +35,6 @@ class AllEventsTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        print(posts.count)
         return posts.count
     }
 
@@ -51,7 +44,7 @@ class AllEventsTableViewController: UITableViewController {
         // Configure the cell...
         let post = posts[indexPath.row]
         
-        cell.eventName.text = post["name"] as! String
+        cell.eventName.text = post["name"] as? String
         
         let date = post["datetime"]
         let formatter = DateFormatter()
@@ -59,7 +52,7 @@ class AllEventsTableViewController: UITableViewController {
         formatter.dateFormat = "MMM d y, h:mm a"
         cell.eventDateTime.text = formatter.string(from: date as! Date)
         
-        cell.eventDescription.text = post["description"] as! String
+        cell.eventDescription.text = post["description"] as? String
         
         let imageFile = post["image"] as! PFFileObject
         let urlString = imageFile.url!
@@ -145,10 +138,10 @@ class AllEventsTableViewController: UITableViewController {
         eventDetailsViewController.postEventName = postEventName
         eventDetailsViewController.postEventDateTime = postEventDateTime
         eventDetailsViewController.postURL = postURL
-        eventDetailsViewController.postEventLocation = postEventLocation as! String
-        eventDetailsViewController.postEventNumerator = numerator as! Int
-        eventDetailsViewController.postEventDenominator = denominator as! Int
-        eventDetailsViewController.postEventRegistered = isregistered as! Bool
+        eventDetailsViewController.postEventLocation = postEventLocation as? String
+        eventDetailsViewController.postEventNumerator = numerator
+        eventDetailsViewController.postEventDenominator = denominator
+        eventDetailsViewController.postEventRegistered = isregistered
         
        
         
