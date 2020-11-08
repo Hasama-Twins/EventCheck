@@ -1,6 +1,11 @@
 # EventCheck
 EventCheck is an iOS mobile application that allows college students to create and attend safe and secure events during COVID-19
 
+[![](http://img.youtube.com/vi/bDuJI2K7Gj0/0.jpg)](http://www.youtube.com/watch?v=bDuJI2K7Gj0 "EventCheck Demo")
+
+Youtube Demo: https://youtu.be/bDuJI2K7Gj0
+
+
 (i) Project Description
 
 EventCheck is an iOS mobile application that allows college students to create and attend safe and secure events during COVID-19. This application attempts to solve potential problems that may arise if college students return to campus in the spring. By requiring health and safety checks before students can attend events, EventCheck relates to Public Health and Innovation, as it minimizes the health risks students may pose on themselves and others.
