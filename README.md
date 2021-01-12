@@ -8,18 +8,19 @@ Youtube Demo: https://youtu.be/bDuJI2K7Gj0
 ## Featured Article
 https://tsl.news/5c-hackathon/
 
-(i) Project Description
+
+## (i) Project Description
 
 EventCheck is an iOS mobile application that allows college students to create and attend safe and secure events during COVID-19. This application attempts to solve potential problems that may arise if college students return to campus in the spring. By requiring health and safety checks before students can attend events, EventCheck relates to Public Health and Innovation, as it minimizes the health risks students may pose on themselves and others.
 
 EventCheck was created on XCode with Swift as an iOS Application project. We used Parse Backend to store and retrieve the event information. We also incorporated Google Firebase’s ML Vision Edge Object Labeling model and Google’s ML Kit Text Recognition model to verify that students were wearing masks and had healthy thermometer readings from images taken on a live iPhone camera. 
 
 
-(ii) Purpose
+## (ii) Purpose
 
 Across the nation’s colleges, campuses have been shutting down, as a result of COVID-19 outbreaks amongst college students. While social events can be the cause of these outbreaks, they do not have to be. If proper health and safety procedures are practiced by event attendees, these events can be a great way for students to feel less isolated during this stressful and unprecedented time. By providing college students with safe spaces to interact with each other through EventCheck, we hope to help students feel connected, supported, and relaxed in their time outside of class. In the future, we hope EventCheck can be effectively incorporated into the Claremont Colleges’ social scene if students return to campus during the COVID-19 pandemic.
 
-(iii) How it works
+## (iii) How it works
 
 This application provides users with a host of features in order to create and attend events safely during the COVID-19 pandemic. On the Home tab, students have the option of creating their own social events, complete with all of the essential details. These events appear on the Events Feed, so students can register before the event safety capacity is full. The events the student is registered for are displayed in the My Registered Events tab. To ensure registered students are not risking the health of other attendees, 30 minutes before the event, EventCheck allows students to complete a short check-in process. 
 
