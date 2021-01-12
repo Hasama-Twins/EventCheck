@@ -5,6 +5,8 @@ EventCheck is an iOS mobile application that allows college students to create a
 
 Youtube Demo: https://youtu.be/bDuJI2K7Gj0
 
+## Featured Article
+https://tsl.news/5c-hackathon/
 
 (i) Project Description
 
